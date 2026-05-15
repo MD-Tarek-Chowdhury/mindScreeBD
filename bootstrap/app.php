@@ -21,12 +21,6 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
 
         $middleware->encryptCookies(except: ['appearance', 'sidebar_state']);
-
-        $middleware->validateCsrfTokens(except: [
-            'assessment',
-            'admin/resources',
-            'admin/resources/*',
-        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
